@@ -13,4 +13,4 @@ matrix:
   allow_failures:
     - rvm: ruby-head
 script:
-  - 'PULL_REQUEST_ID=${TRAVIS_PULL_REQUEST} bundle exec pronto run -f github_pr'
+  - 'if [ "$TRAVIS_PULL_REQUEST" != false ]; then PULL_REQUEST_ID=${TRAVIS_PULL_REQUEST} bundle exec pronto run -f github_pr; fi;'
