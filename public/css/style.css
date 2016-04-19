@@ -1,0 +1,42 @@
+.intro,
+.kitten,
+.puppy {
+  display: inline-block;
+  margin: 1rem 2rem;
+  padding: 0.5rem;
+}
+.intro {
+  float: left;
+  max-width: 500px;
+}
+
+.intro h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 4.6rem;
+  font-weight: 400;
+  margin: 0 .3rem;
+}
+
+.intro h2 {
+  font-size: 1rem;
+  font-weight: lighter;
+  font-style: italic;
+  margin: 0 .3rem 3rem;
+}
+
+.intro p {
+  line-height: 1.2rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+img {
+  display: inline-block;
+  line-height: 0;
+  opacity: 0.8;
+  transition: all 1s;
+}
+
+img:hover {
+  opacity: 1;
+  transition: all 1s;
+}
