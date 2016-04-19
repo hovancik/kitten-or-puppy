@@ -22,4 +22,14 @@ class Database
       .fetch("SELECT * FROM #{table} WHERE #{where} ORDER BY RANDOM() LIMIT 1")
       .to_a[0]
   end
+
+  # vote for image
+  def vote(animal_id)
+    insert(
+      :votes,
+      animal_id: animal_id,
+      created_at: Time.now,
+      updated_at: Time.now
+    )
+  end
 end
