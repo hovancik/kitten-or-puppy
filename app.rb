@@ -25,6 +25,7 @@ class App < Sinatra::Base
   def m_url(link)
     splitted = link.split('.')
     splitted[-2] << 'm'
+    splitted[0].slice!('http:')
     splitted.join('.')
   end
 
