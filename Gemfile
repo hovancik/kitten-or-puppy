@@ -10,3 +10,5 @@ gem 'pronto'
 gem 'pronto-rubocop', require: false
 # dotenv
 gem 'dotenv'
+# Puma
+gem 'puma'
