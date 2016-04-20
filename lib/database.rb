@@ -32,4 +32,15 @@ class Database
       updated_at: Time.now
     )
   end
+
+  # percentage of votes for kittens
+  def vote_percentage(type)
+    animals_votes = @db["select * from votes where animal_id in \
+      (select id from animals where type = '#{type}')"]
+    begin
+      (animals_votes.count / @db[:votes].count.to_f * 100).round
+    rescue FloatDomainError
+      50 # we have no data, it's 50:50
+    end
+  end
 end
