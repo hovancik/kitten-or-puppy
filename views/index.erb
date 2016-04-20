@@ -9,6 +9,7 @@
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans" rel="stylesheet" type="text/css">
+    <link href="img/favicon.ico" rel="icon" type="image/ico">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -28,7 +29,8 @@
         We took your pictures from Imgur, you click and vote.
       </p>
       <p>
-        ... and right now it's
+        <strong><%= @vote_count %> clicks</strong>
+        and right now it's
         <% if @kitten_percent > 50 %>
           <strong><%= @kitten_percent %>/<%= 100 - @kitten_percent %></strong> for kittens!
         <% elsif @kitten_percent < 50 %>
@@ -48,5 +50,8 @@
         <img src=<%= @puppy_url %> alt="Puppy" />
       </a>
     </div>
+    <a href="https://github.com/hovancik/kitten-or-puppy">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+    </a>
   </body>
 </html>
