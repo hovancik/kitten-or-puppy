@@ -29,7 +29,8 @@
         We took your pictures from Imgur, you click and vote.
       </p>
       <p>
-        ... and right now it's
+        <strong><%= @vote_count %> clicks</strong>
+        and right now it's
         <% if @kitten_percent > 50 %>
           <strong><%= @kitten_percent %>/<%= 100 - @kitten_percent %></strong> for kittens!
         <% elsif @kitten_percent < 50 %>

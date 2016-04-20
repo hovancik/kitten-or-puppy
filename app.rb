@@ -14,6 +14,7 @@ class App < Sinatra::Base
     puppy = database.random_row('animals', "type = 'puppy'")
     @puppy_url, @puppy_id = url_and_id_from(puppy)
     @kitten_percent = database.vote_percentage('kitten')
+    @vote_count = database.vote_count
     erb :index
   end
 

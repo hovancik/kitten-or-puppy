@@ -43,4 +43,8 @@ class Database
       50 # we have no data, it's 50:50
     end
   end
+
+  def vote_count
+    @db[:votes].count
+  end
 end
