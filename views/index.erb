@@ -8,7 +8,7 @@
     <title>Kitten or Puppy?</title>
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Amatic+SC|Open+Sans" rel="stylesheet" type="text/css">
     <link href="img/favicon.ico" rel="icon" type="image/ico">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,24 +20,30 @@
   <body>
     <div class="intro">
       <h1>Kitten OR Puppy?</h1>
-      <h2>&weierp; answering the question that matters most &weierp;</h2>
+      <h2>answering the question that matters most</h2>
       <p>
         Cats and dogs are the most popular pets in the world. <br/>
-        <strong>But which is better?</strong> You decide!
+        The unending rivalry between them won't end today,
+        but thanks to your input we're going to at least find out which pet
+        seems to be more popular.
       </p>
       <p>
-        We took your pictures from Imgur, you click and vote.
+        <strong>How are we gonna do it?</strong><br/>
+        We took pictures of <a href="https://imgur.com/r/kittens">kittens</a> and <a href="https://imgur.com/r/puppies">puppies</a> and you shall vote by clicking
+        on image of your liking.
       </p>
       <p>
-        <strong><%= @vote_count %> clicks</strong>
-        and right now it's
-        <% if @kitten_percent > 50 %>
-          <strong><%= @kitten_percent %>/<%= 100 - @kitten_percent %></strong> for kittens!
-        <% elsif @kitten_percent < 50 %>
-          <strong><%= 100 - @kitten_percent %>/<%= @kitten_percent %></strong> for puppies!
-        <% else %>
-          <strong>50/50</strong>
-        <% end %>
+        <strong>
+          <%= @vote_count %> clicks
+          and right now it's
+          <% if @kitten_percent > 50 %>
+            <%= @kitten_percent %>/<%= 100 - @kitten_percent %> for kittens!
+          <% elsif @kitten_percent < 50 %>
+            <%= 100 - @kitten_percent %>/<%= @kitten_percent %> for puppies!
+          <% else %>
+            50/50
+          <% end %>
+        </strong>
       </p>
     </div>
     <div class="kitten">
@@ -50,8 +56,30 @@
         <img src=<%= @puppy_url %> alt="Puppy" />
       </a>
     </div>
+    <footer>
+      <p>
+        created with <strong>:)</strong> by <a href="https://hovancik.net" title="Jan Hovancik">Jan Hovancik</a>, 2016+<br/>
+        running on <a href="http://lowendspirit.com">LowEndSpirit</a> VPS, images from <a href="https://imgur.com/">imgur</a>
+      </p>
+      <div class="fb-share-button" data-href="https://kittenorpuppy.net" data-layout="button_count" data-mobile-iframe="true"></div>
+      <br/>
+      <div class="g-plus" data-action="share" data-height="24" data-annotation="bubble" data-href="https://kittenorpuppy.com"></div>
+      <br/>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://kittenorpuppy.net">Tweet</a>
+    </footer>
     <a href="https://github.com/hovancik/kitten-or-puppy">
       <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
     </a>
+    <!-- FB and Google share -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script src="//apis.google.com/js/platform.js" async defer></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   </body>
 </html>
